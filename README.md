@@ -54,11 +54,11 @@ Make sure to create the relationships between the tables, so the database is pop
 2. Find all the tags that belong to a post with the title "Post 1".
 
 ```ruby
-### Code here
+### Post.find_by(title: "Post 1").tags
 ```
 
 3. Find all users that have a post with the tag "Tag 1".
 
 ```ruby
-### Code here
+###  User.where(id: Tag.find_by(name: "Tag 1").posts.pluck(:user_id)).distinct
 ```
